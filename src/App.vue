@@ -9,6 +9,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <p class="test-class">TEST</p>
     </div>
   </header>
 
@@ -17,7 +18,13 @@ import TheWelcome from './components/TheWelcome.vue'
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import './assets/scss/style';
+
+.test-class {
+  color: $color-red;
+}
+
 header {
   line-height: 1.5;
 }
