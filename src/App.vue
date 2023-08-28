@@ -182,7 +182,50 @@
         </p>
       </div> -->
     </main>
-    <footer>site footer</footer>
+    <footer class="footer">
+      <p class="logo">[ morda-morda ]</p>
+      <div class="footer-links-container">
+        <div>
+          <p>About Us</p>
+          <p>What is Morda-Morda?</p>
+          <p>Cats</p>
+          <p>Fat cats</p>
+          <p>More cats</p>
+        </div>
+
+        <div>
+          <p>Projects</p>
+          <p>Modal component</p>
+          <p>Cats</p>
+          <p>Fat cats</p>
+          <p>More cats</p>
+        </div>
+
+        <div>
+          <p>Help</p>
+          <p>Support</p>
+          <p>Cats</p>
+          <p>Fat cats</p>
+          <p>More cats</p>
+        </div>
+
+        <div>
+          <p>Social</p>
+          <p>Support</p>
+          <p>Cats</p>
+          <p>Fat cats</p>
+          <p>More cats</p>
+        </div>
+
+        <div>
+          <p>Stories</p>
+          <p>Stories about cats</p>
+          <p>Cats</p>
+          <p>Fat cats</p>
+          <p>More cats</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -210,7 +253,7 @@
   padding: 112px 56px;
   background-color: #fff0e2;
   border-radius: 24px;
-  background-image: url("./assets/img/tuborg-cat.png");
+  background-image: url('./assets/img/tuborg-cat.png');
   background-repeat: no-repeat;
   background-position: bottom right;
 }
@@ -254,5 +297,19 @@
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1216px;
+  width: 100%;
+  margin: auto;
+}
+
+.footer-links-container {
+  display: flex;
+  /* gap: 32px; */
+  justify-content: space-between;
 }
 </style>
