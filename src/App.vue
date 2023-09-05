@@ -1,23 +1,31 @@
 <template>
   <div class="container">
-    <header class="header">
-      <p class="logo">[ morda-morda ]</p>
-      <button type="button" class="button-primary">Open modal</button>
-    </header>
+    <AppHeader />
 
     <main class="main-content">
       <div class="cta-block-container">
-        <div class="cta-block">
-          <h1 class="cta-title">Ready to Build a Modal Component?</h1>
-          <p class="cta-text">
-            Unlock the power of Vue 3 by crafting your own custom modal. This essential UI element
-            can elevate the user experience on any website or application.
-          </p>
-
-          <button type="button" class="button-primary">Open modal</button>
-        </div>
+        <CtaBlock />
       </div>
 
+      <h2 class="section-title">Stories</h2>
+      <CardsGrid>
+        <GridCard
+          :size="GridCardSizes.MD"
+          imgUrl="../src/assets/img/fat-cat-king.jpg"
+          label="Harvey"
+        />
+        <GridCard
+          :size="GridCardSizes.MD"
+          imgUrl="../src/assets/img/patches-laying.jpg"
+          label="Patches"
+        />
+        <GridCard :size="GridCardSizes.XS" imgUrl="../src/assets/img/logan.jpg" label="Logan" />
+        <GridCard
+          :size="GridCardSizes.LG"
+          imgUrl="../src/assets/img/meatball.jpg"
+          label="Meatball"
+        />
+      </CardsGrid>
       <!-- <div class="text-content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh nibh, vulputate in
@@ -182,54 +190,22 @@
         </p>
       </div> -->
     </main>
-    <footer class="footer">
-      <p class="logo">[ morda-morda ]</p>
-      <div class="footer-links-container">
-        <div>
-          <p>About Us</p>
-          <p>What is Morda-Morda?</p>
-          <p>Cats</p>
-          <p>Fat cats</p>
-          <p>More cats</p>
-        </div>
 
-        <div>
-          <p>Projects</p>
-          <p>Modal component</p>
-          <p>Cats</p>
-          <p>Fat cats</p>
-          <p>More cats</p>
-        </div>
-
-        <div>
-          <p>Help</p>
-          <p>Support</p>
-          <p>Cats</p>
-          <p>Fat cats</p>
-          <p>More cats</p>
-        </div>
-
-        <div>
-          <p>Social</p>
-          <p>Support</p>
-          <p>Cats</p>
-          <p>Fat cats</p>
-          <p>More cats</p>
-        </div>
-
-        <div>
-          <p>Stories</p>
-          <p>Stories about cats</p>
-          <p>Cats</p>
-          <p>Fat cats</p>
-          <p>More cats</p>
-        </div>
-      </div>
-    </footer>
+    <AppFooter />
   </div>
 </template>
 
-<style>
+<script setup lang="ts">
+import AppFooter from './components/AppFooter.vue'
+import AppHeader from './components/AppHeader.vue'
+import CtaBlock from './components/CtaBlock.vue'
+import GridCard from './components/GridCard.vue'
+import CardsGrid from './components/CardsGrid.vue'
+
+import { GridCardSizes } from './constants/enums'
+</script>
+
+<style scoped lang="scss">
 .container {
   max-width: 1440px;
   width: 100%;
@@ -238,41 +214,12 @@
   margin: auto;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 112px;
-}
-
 .cta-block-container {
   margin-bottom: 96px;
 }
 
-.cta-block {
-  padding: 112px 56px;
-  background-color: #fff0e2;
-  border-radius: 24px;
-  background-image: url('./assets/img/tuborg-cat.png');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
-.cta-title {
-  font-size: 48px;
-  line-height: 56px;
-  max-width: 500px;
-}
-
-.cta-text {
-  font-size: 20px;
-  /* line-height: 28px; */
-  font-weight: 600;
-  max-width: 540px;
-}
-
 .main-content {
-  padding: 0 56px;
+  padding: 80px 56px 0;
 }
 
 .text-content {
@@ -280,36 +227,10 @@
   margin: auto;
 }
 
-.logo {
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 24px;
-  margin: 0;
-  padding: 20px 0;
-}
-
-.button-primary {
-  background-color: #ff6490;
-  border: none;
-  color: #fff;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  max-width: 1216px;
-  width: 100%;
-  margin: auto;
-}
-
-.footer-links-container {
-  display: flex;
-  /* gap: 32px; */
-  justify-content: space-between;
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  margin-bottom: 40px;
 }
 </style>
